@@ -2048,7 +2048,7 @@ function sendToNotify {
 		# 	discord_url=$(cat ${NOTIFY_CONFIG} | grep '^ discord_webhook_url\|^discord_webhook_url\|^    discord_webhook_url' | xargs | cut -d' ' -f2)
 		# 	curl -v -i -H "Accept: application/json" -H "Content-Type: multipart/form-data" -X POST -F file1=@${1} $discord_url 2>>"$LOGFILE" >/dev/null
 		# fi
-		notification "slack_channel is: ${slack_channel}"
+		printf "slack_channel is: ${slack_channel}"
 		if [[ -n "$slack_channel" ]] && [[ -n "$slack_auth" ]]; then
 			notification "Sending ${domain} data over Slack" info
 			curl -F file=@${1} -F "initial_comment=reconftw zip file" -F channels=${slack_channel} -H "Authorization: Bearer ${slack_auth}" https://slack.com/api/files.upload 2>>"$LOGFILE" >/dev/null

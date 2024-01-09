@@ -1949,7 +1949,7 @@ function zipSnedOutputFolder {
 	echo "Sending zip file "${dir}/${zip_name}""
 	if [ -s "${dir}/$zip_name" ]; then
 		sendToNotify "$dir/$zip_name"
-		rm -f "${dir}/$zip_name"
+		#rm -f "${dir}/$zip_name"
 	else
 		notification "No Zip file to send" warn
 	fi

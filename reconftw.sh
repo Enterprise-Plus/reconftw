@@ -33,7 +33,7 @@ function check_version(){
 }
 
 function tools_installed(){
-
+	[ -d $tools ] || mkdir -p $tools
 	printf "\n\n${bgreen}#######################################################################${reset}\n"
 	printf "${bblue} Checking installed tools ${reset}\n\n"
 
